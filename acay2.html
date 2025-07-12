@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Acay Mau?</title>
+
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      font-family: sans-serif;
+      background: linear-gradient(to bottom, #f7c1da, #dcb4ec, #b0d9f4);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .button-container {
+      margin-top: 20px;
+      display: flex;
+      gap: 40px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      font-size: 16px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+
+    #mau-btn {
+      background-color: #4caf50;
+      color: white;
+    }
+
+    #engga-btn {
+      background-color: #f44336;
+      color: white;
+    }
+
+    #gambarAcay, #videoAcay {
+      margin-top: 30px;
+      max-width: 170px;
+      border-radius: 10px;
+    }
+
+    #videoAcay {
+      display: none; /* Disembunyiin dulu */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Musik -->
+  <audio autoplay loop hidden>
+    <source src="morning mood.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Teks Utama -->
+  <h2 data-aos="zoom-out">Aku mw ajak Acay main akhir bulan, Acay mau gak😊</h2>
+
+  <!-- Gambar awal -->
+  <img id="gambarAcay" src="kitty.jpeg" alt="Foto Acay" data-aos="zoom-in">
+
+  <!-- Video ganti-ganti -->
+  <video id="videoAcay" autoplay muted loop playsinline data-aos="zoom-in">
+    <source src="video1.mp4" type="video/mp4">
+    Browser kamu tidak mendukung video :(
+  </video>
+
+  <!-- Tombol -->
+  <div class="button-container" data-aos="fade-up">
+    <button id="engga-btn" class="btn" onclick="gantiVideo()">Enggak</button>
+    <button id="mau-btn" class="btn" onclick="location.href='acay3.html'">Mau</button>
+  </div>
+
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+  <!-- Script Ganti Video -->
+  <script>
+    const video = document.getElementById("videoAcay");
+    const gambar = document.getElementById("gambarAcay");
+
+    const daftarVideo = [
+      "awoo.mp4",
+      "awewe.mp4",
+      "cry.mp4",
+      "merenung.mp4",
+      "sama.mp4",
+      "awoo.mp4",
+      "awewe.mp4",
+      "cry.mp4",
+      "merenung.mp4",
+      "sama.mp4",
+      "awoo.mp4",
+      "awewe.mp4",
+      "cry.mp4",
+      "merenung.mp4",
+      "sama.mp4",
+      "awoo.mp4",
+      "awewe.mp4",
+      "cry.mp4",
+      "merenung.mp4",
+      "sama.mp4"
+    ];
+    let index = 0;
+    let videoDimulai = false;
+
+    function gantiVideo() {
+      if (!videoDimulai) {
+        // Sembunyikan gambar dan tampilkan video
+        gambar.style.display = "none";
+        video.style.display = "block";
+        videoDimulai = true;
+        video.src = daftarVideo[index];
+        video.load();
+        video.play();
+      } else {
+        // Ganti ke video berikutnya
+        index = (index + 1) % daftarVideo.length;
+        video.src = daftarVideo[index];
+        video.load();
+        video.play();
+      }
+    }
+  </script>
+</body>
+</html>

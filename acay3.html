@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Yeaayy!</title>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      background: linear-gradient(177deg, rgba(238, 174, 202, 1) 0%, rgba(212, 178, 211, 1) 61%, rgba(148, 187, 233, 1) 100%);
+      text-align: center;
+    }
+
+    #bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+      object-fit: cover;
+    }
+
+    h1, h2 {
+      z-index: 1;
+      margin: 10px;
+    }
+
+    img {
+      margin-top: 20px;
+      width: 200px;
+      border-radius: 10px;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <!-- Background Video -->
+  <video autoplay muted loop id="bg-video">
+    <source src="background.mp4" type="video/mp4">
+  </video>
+
+  <!-- Musik -->
+  <audio autoplay loop hidden>
+    <source src="backsound.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Teks dan Gambar -->
+  <h1 data-aos="zoom-out">Horeee acay mw main😽😽😽😽😽😽</h1>
+  <img src="luvv.jpeg" alt="Acay Gemoy" data-aos="zoom-in">
+
+  <h2 data-aos="fade-up">Screenshot hasil ini bwat di kasih ke baginda erik🤭🤭🤭🤭🤭🤭🤭🤭🤭🤭🤭</h2>
+
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>
